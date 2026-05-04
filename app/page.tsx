@@ -144,8 +144,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="mt-3 text-sm leading-6 text-cream/80">
-                    "Corte limpio, conversacion sabrosa y un acabado que se
-                    nota desde que sales por la puerta."
+                    Corte limpio, conversacion sabrosa y un acabado que se nota
+                    desde que sales por la puerta.
                   </p>
                 </div>
               </div>
