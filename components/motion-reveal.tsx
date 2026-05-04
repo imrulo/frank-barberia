@@ -1,27 +1,24 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type MotionRevealProps<T extends ElementType> = {
-  as?: T;
+type MotionRevealProps = {
   children: ReactNode;
   delay?: number;
   className?: string;
-} & Omit<ComponentPropsWithoutRef<T>, "as" | "children" | "className">;
+} & Omit<ComponentPropsWithoutRef<"div">, "children" | "className">;
 
-export function MotionReveal<T extends ElementType = "div">({
-  as,
+export function MotionReveal({
   children,
   delay = 0,
   className,
   ...props
-}: MotionRevealProps<T>) {
+}: MotionRevealProps) {
   const shouldReduceMotion = useReducedMotion();
-  const Component = motion(as ?? "div");
 
   return (
-    <Component
+    <motion.div
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -30,6 +27,6 @@ export function MotionReveal<T extends ElementType = "div">({
       {...props}
     >
       {children}
-    </Component>
+    </motion.div>
   );
 }

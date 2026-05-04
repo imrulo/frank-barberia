@@ -278,7 +278,10 @@ export default function Home() {
                   ["Agenda flexible", "Ideal para cortes, barba o ritual completo."],
                   ["Sin complicaciones", "Llegas, te sientas y Frank se encarga."],
                 ].map(([title, text]) => (
-                  <div key={title} className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <div
+                    key={title}
+                    className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                  >
                     <ShieldCheck className="h-6 w-6 shrink-0 text-gold" />
                     <div>
                       <p className="font-bold text-cream">{title}</p>
